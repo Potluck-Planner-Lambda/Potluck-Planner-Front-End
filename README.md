@@ -1,1 +1,4 @@
-# potluck-planner-front-end
+# potluck-planner git flow
+
+
+
