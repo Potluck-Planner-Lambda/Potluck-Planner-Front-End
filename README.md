@@ -67,9 +67,3 @@ IF the app looks clean, the changes are good, and your ready to deploy the updat
 At the end of the day, someone pulls the running playground into master
 
 
-**Notes**
-_Or `git commit` if you're using gitmoji with the hook_
-_Merged using recursive strategy sometimes happens_
-
-
-
