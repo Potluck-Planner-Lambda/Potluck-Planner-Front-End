@@ -23,7 +23,7 @@ export class Login extends Component {
 
     axiosWithAuth()
       .post('/login', this.state.credentials)
-      .then(res => console.log(res)) //localStorage.setItem('token', res.data.token <-- when routes are created
+      .then(res => localStorage.setItem('token', res.data.token))
       .catch(err => console.log(err))
   }
 
