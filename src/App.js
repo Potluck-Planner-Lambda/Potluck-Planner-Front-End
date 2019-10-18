@@ -7,7 +7,7 @@ import EventContext from "./contexts/EventContext";
 import Navigation from "./components/Navigation/Navigation";
 import Home from "./components/Home";
 import CreateAccount from "./components/CreateAccount";
-import Login from "./components/Login";
+import Login from "./Login/Login";
 import UsersList from "./components/Users/UsersList";
 import EventsList from "./components/Events/EventsList";
 import EventPage from "./components/Events/EventPage";
