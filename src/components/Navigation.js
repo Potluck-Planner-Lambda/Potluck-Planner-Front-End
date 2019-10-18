@@ -1,8 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 const Navigation = () => {
-
   return (
     <nav>
       <div>
@@ -10,7 +9,7 @@ const Navigation = () => {
       </div>
 
       <div>
-        <Link to='/Login'>Login</Link>
+        <Link to='/'>Login</Link>
       </div>
 
       <div>
@@ -26,4 +25,4 @@ const Navigation = () => {
   )
 }
 
-export default Navigation;
+export default Navigation

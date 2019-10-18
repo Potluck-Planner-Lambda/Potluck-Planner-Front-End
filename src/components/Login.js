@@ -22,7 +22,7 @@ export class Login extends Component {
     e.preventDefault()
 
     axiosWithAuth()
-      .post('/login', this.state.credentials)
+      .post('/users/login', this.state.credentials)
       .then(res => localStorage.setItem('token', res.data.token))
       .catch(err => console.log(err))
   }
