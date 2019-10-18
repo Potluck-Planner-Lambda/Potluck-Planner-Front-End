@@ -21,13 +21,16 @@ function App() {
       <UserContext.Provider value={user}>
         <div className='App'>
           <Navigation />
-          <Route exact path='/Home' component={Home} />
-          <Route exact path='/' component={Login} />
-          <Route exact path='/CreateAnAccount' component={CreateAccount} />
-          <Route exact path='/Events' component={EventsList} />
-          <Route path="/Events/:id" component={EventPage} />
-          <Route exact path='/Users' component={UsersList} />
-          <Route exact path="/Users/:id" component={UserPage} />
+
+          <div className="contentContainer">
+            <Route exact path='/' component={Home} />
+            <Route exact path='/' component={Login} />
+            <Route exact path='/CreateAnAccount' component={CreateAccount} />
+            <Route exact path='/Events' component={EventsList} />
+            <Route path="/Events/:id" component={EventPage} />
+            <Route exact path='/Users' component={UsersList} />
+            <Route exact path="/Users/:id" component={UserPage} />
+          </div>
         </div>
         <div style={{marginTop:'200px'}}><p>In Playground.</p></div>
       </UserContext.Provider>

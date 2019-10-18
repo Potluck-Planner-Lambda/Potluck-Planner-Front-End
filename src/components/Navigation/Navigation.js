@@ -23,14 +23,14 @@ const Navigation = (props) => {
 
   return (
     <Navbar color="light" light expand="md">
-      <NavbarBrand href="/Home"><img src={ Logo } alt='Potluck Logo' className='navLogo'/></NavbarBrand>
+      <NavbarBrand href="/"><img src={ Logo } alt='Potluck Logo' className='navLogo'/></NavbarBrand>
 
       <NavbarToggler onClick={toggle} />
 
       <Collapse isOpen={isOpen} navbar>
         <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink href="/Home">Home</NavLink>
+            <NavLink href="/">Home</NavLink>
           </NavItem>
 
           <NavItem>
