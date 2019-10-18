@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import './App.css'
 import { Route, Switch } from 'react-router-dom'
+import { Container } from 'reactstrap'
 
 import UserContext from './contexts/UserContext'
 import EventContext from './contexts/EventContext'
@@ -24,13 +25,15 @@ function App() {
         <div className='App'>
           <Navigation />
           <Switch>
-            <PrivateRoute exact path='/Home' component={Home} />
-            <Route exact path='/' component={Login} />
-            <Route exact path='/CreateAnAccount' component={CreateAccount} />
-            <PrivateRoute exact path='/Events' component={EventsList} />
-            <PrivateRoute path='/Events/:id' component={EventPage} />
-            <PrivateRoute exact path='/Users' component={UsersList} />
-            <PrivateRoute exact path='/Users/:id' component={UserPage} />
+            <Container className="contentContainer">
+              <PrivateRoute exact path='/Home' component={Home} />
+              <Route exact path='/' component={Login} />
+              <Route exact path='/CreateAnAccount' component={CreateAccount} />
+              <PrivateRoute exact path='/Events' component={EventsList} />
+              <PrivateRoute path='/Events/:id' component={EventPage} />
+              <PrivateRoute exact path='/Users' component={UsersList} />
+              <PrivateRoute exact path='/Users/:id' component={UserPage} />
+            </Container>
           </Switch>
         </div>
         <div style={{ marginTop: '200px' }}>
