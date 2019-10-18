@@ -15,9 +15,6 @@
 }
 
 h1.loginHeader {
-    font-family: 'Roboto Slab', serif;
-    font-size: 2rem;
-    color:#EF4723;
     text-align: center;
     margin-bottom: 8%;
 }
@@ -25,6 +22,7 @@ h1.loginHeader {
 .loginInput {
     margin-bottom: 3%;
     border-color:#EF4723 ;
+    font-size: 1.6rem;
 }
 
 .loginButton {
@@ -33,6 +31,6 @@ h1.loginHeader {
     border: none;
     min-width: 100px;
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font-size: 1.6rem;
 }
 

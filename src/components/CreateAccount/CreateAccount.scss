@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-
 .signUpCard {
     padding: 40px 50px;
     border: 1px solid rgba(0, 0, 0, 0.12);
@@ -15,7 +14,7 @@
 
 h1.signUpHeader {
     font-family: 'Roboto Slab', serif;
-    font-size: 2rem;
+    font-size: 2.4rem;
     color:#EF4723;
     text-align: center;
     margin-bottom: 5%;
@@ -27,7 +26,7 @@ h1.signUpHeader {
 
 .inputBorder {
     border-color:#EF4723 ;
-
+    font-size: 1.6rem;
 }
 
 .signUpButton {
@@ -36,5 +35,5 @@ h1.signUpHeader {
     border: none;
     min-width: 100px;
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font-size: 1.6rem;
 }

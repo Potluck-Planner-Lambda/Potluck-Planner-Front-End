@@ -1,12 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
-.contentContainer {
-    padding-top: 50px;
-}
-
+  
 h1 {
     font-family: 'Roboto Slab', serif;
-    font-size: 2rem;
+    font-size: 3.2rem;
     color:#EF4723;
+}
+
+h4 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.8rem;
+    color:#EBEDF1;
+}
+
+p{ 
+    font-size: 1.6rem;
+}
+
+button {
+    font-size: 1.6rem;
+}
+
+.container {
+    padding-top: 3%;
 }

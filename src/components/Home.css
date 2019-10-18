@@ -1,0 +1,23 @@
+.dashboard-container {
+    width: 100%;
+    display: flex;
+}
+
+.dashboard-sidebar {
+    max-width: 25%;
+    flex-basis: 425px;
+    background-color: rgba(119, 126, 140, 1);
+    padding: 1% 2%;
+}
+
+.dasboard-content {
+    width: 100%;
+    flex-basis: 860px;
+    padding: 1% 2%;
+}
+
+.logout-button {
+    font-size: 1.6rem;
+    background-color: white;
+    color: rgba(119, 126, 140, 1);
+}
