@@ -1,8 +1,8 @@
 import React from 'react';
 import { Card, Container, Col, Row, Button, Form, Input } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import Logo from '../photos/Logos/MainLogo.svg';
-import GreenCheck from '../photos/Icons/charmark-green.svg'
+import Logo from '../../photos/Logos/MainLogo.svg';
+import GreenCheck from '../../photos/Icons/charmark-green.svg'
 import './CreateAccount.scss';
 
 
