@@ -1920,7 +1920,7 @@ babel-jest@^24.9.0:
     chalk "^2.4.2"
     slash "^2.0.0"
 
-babel-loader@8.0.6:
+babel-loader@8.0.6, babel-loader@^8.0.6:
   version "8.0.6"
   resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.0.6.tgz#e33bdb6f362b03f4bb141a0c21ab87c501b70dfb"
   integrity sha512-4BmWKtBOBm13uoUwd08UwjZlaw3O9GWf456R9j+5YykFZ6LUIjIKLc0zEZf+hauxPOJs96C8k6FvYD09vWzhYw==
@@ -8598,7 +8598,7 @@ react@^16.10.2:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
 
-reactstrap@^8.0.1:
+reactstrap@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/reactstrap/-/reactstrap-8.1.0.tgz#091e0303c17b65de34b2f0cb0058a9e1593456b8"
   integrity sha512-Zz2Hlx8d4neeSNd1VAIyX/+2SH1fmTpsdtmtH00AtuYAvrbTXbNnZFKJu2z9KoWuV5mFgywKgBxzzKPIdu4gyw==

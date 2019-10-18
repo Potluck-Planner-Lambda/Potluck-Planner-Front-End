@@ -1,5 +1,9 @@
-import React, { Component } from 'react'
-import { axiosWithAuth } from '../utils/axiosWithAuth'
+import React, { Component } from 'react';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { Card, Container, Col, Button, Form, Input } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+import './Login.scss';
+import Logo from '../photos/Logos/MainLogo.svg';
 
 export class Login extends Component {
   state = {
@@ -29,25 +33,33 @@ export class Login extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.login}>
-          <input
-            type='text'
-            name='username'
-            placeholder='Username'
-            value={this.state.credentials.username}
-            onChange={this.handleChange}
-          />
-          <input
-            type='password'
-            name='password'
-            placeholder='Password'
-            value={this.state.credentials.password}
-            onChange={this.handleChange}
-          />
-          <button>Log in</button>
-        </form>
-      </div>
+      <Container className="loginContainer">
+        <Col>
+        <Card className="loginCard">
+          <img src={Logo} alt='Potluck Logo' className='loginLogo'/>
+          <h1 className="loginHeader">Login To Your Account</h1>
+          <Form onSubmit={this.login}>
+            <Input
+              type='text'
+              name='username'
+              placeholder='Username'
+              className='loginInput'
+              value={this.state.credentials.username}
+              onChange={this.handleChange}
+            />
+            <Input
+              type='password'
+              name='password'
+              placeholder='Password'
+              className='loginInput'
+              value={this.state.credentials.password}
+              onChange={this.handleChange}
+            />
+            <Button className="loginButton" type="submit">Login</Button>
+          </Form>
+        </Card>
+        </Col>
+      </Container>
     )
   }
 }

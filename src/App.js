@@ -20,7 +20,6 @@ function App() {
     <EventContext.Provider value={event}>
       <UserContext.Provider value={user}>
         <div className='App'>
-          <h1>In Playground.</h1>
           <Navigation />
           <Route exact path='/Home' component={Home} />
           <Route exact path='/' component={Login} />
@@ -30,8 +29,10 @@ function App() {
           <Route exact path='/Users' component={UsersList} />
           <Route exact path="/Users/:id" component={UserPage} />
         </div>
+        <div style={{marginTop:'200px'}}><p>In Playground.</p></div>
       </UserContext.Provider>
     </EventContext.Provider>
+    
   )
 }
 
