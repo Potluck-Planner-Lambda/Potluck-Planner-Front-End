@@ -16,6 +16,12 @@ const Navigation = () => {
       <div>
         <Link to='/CreateAnAccount'>Create Account</Link>
       </div>
+      <div>
+        <Link to='/Events'>Events</Link>
+      </div>
+      <div>
+        <Link to='/Users'>Users</Link>
+      </div>
     </nav>
   )
 }
