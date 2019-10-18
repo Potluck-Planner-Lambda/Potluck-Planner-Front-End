@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom'
 
 import UserContext from "./contexts/UserContext";
 import EventContext from "./contexts/EventContext";
-import Navigation from "./components/Navigation";
+import Navigation from "./components/Navigation/Navigation";
 import Home from "./components/Home";
 import CreateAccount from "./components/CreateAccount";
 import Login from "./components/Login";
