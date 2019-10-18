@@ -24,8 +24,8 @@ function App() {
       <UserContext.Provider value={user}>
         <div className='App'>
           <Navigation />
-          <Switch>
-            <Container className='contentContainer'>
+          <Container className='contentContainer'>
+            <Switch>
               <PrivateRoute exact path='/Home' component={Home} />
               <Route exact path='/' component={Login} />
               <Route exact path='/CreateAnAccount' component={CreateAccount} />
@@ -33,8 +33,8 @@ function App() {
               <PrivateRoute path='/Events/:id' component={EventPage} />
               <PrivateRoute exact path='/Users' component={UsersList} />
               <PrivateRoute exact path='/Users/:id' component={UserPage} />
-            </Container>
-          </Switch>
+            </Switch>
+          </Container>
         </div>
         <div style={{ marginTop: '200px' }}>
           <p>In Playground.</p>
