@@ -11,15 +11,15 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem
-} from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.css';
-import './Navigation.scss';
-import Logo from '../../photos/Logos/MainLogo.svg';
+} from 'reactstrap'
+import 'bootstrap/dist/css/bootstrap.css'
+import './Navigation.scss'
+import Logo from '../../photos/Logos/MainLogo.svg'
 
-const Navigation = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Navigation = props => {
+  const [isOpen, setIsOpen] = useState(false)
 
-  const toggle = () => setIsOpen(!isOpen);
+  const toggle = () => setIsOpen(!isOpen)
 
   return (
     <Navbar color="light" light expand="md">
@@ -28,19 +28,19 @@ const Navigation = (props) => {
       <NavbarToggler onClick={toggle} />
 
       <Collapse isOpen={isOpen} navbar>
-        <Nav className="ml-auto" navbar>
+        <Nav className='ml-auto' navbar>
           <NavItem>
             <NavLink href="/">Home</NavLink>
           </NavItem>
 
           <NavItem>
-            <NavLink href="/Events">Events</NavLink>
+            <NavLink href='/Events'>Events</NavLink>
           </NavItem>
 
           <NavItem>
-            <NavLink href="/Users">Users</NavLink>
+            <NavLink href='/Users'>Users</NavLink>
           </NavItem>
-          
+
           <UncontrolledDropdown nav inNavbar>
             <DropdownToggle nav caret>
               Account
@@ -58,7 +58,7 @@ const Navigation = (props) => {
         </Nav>
       </Collapse>
     </Navbar>
-  );
+  )
 }
 
 // const Navigation = () => {

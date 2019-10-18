@@ -1,17 +1,19 @@
 import React, { useContext } from 'react'
 import './App.css'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
-import UserContext from "./contexts/UserContext";
-import EventContext from "./contexts/EventContext";
-import Navigation from "./components/Navigation/Navigation";
-import Home from "./components/Home";
-import CreateAccount from "./components/CreateAccount";
-import Login from "./components/Login/Login";
-import UsersList from "./components/Users/UsersList";
-import EventsList from "./components/Events/EventsList";
-import EventPage from "./components/Events/EventPage";
-import UserPage from "./components/Users/UserPage";
+import UserContext from './contexts/UserContext'
+import EventContext from './contexts/EventContext'
+import Navigation from './components/Navigation/Navigation'
+import Home from './components/Home'
+import CreateAccount from './components/CreateAccount'
+import Login from './components/Login/Login'
+import UsersList from './components/Users/UsersList'
+import EventsList from './components/Events/EventsList'
+import EventPage from './components/Events/EventPage'
+import UserPage from './components/Users/UserPage'
+import PrivateRoute from './components/PrivateRoute'
+
 function App() {
   const event = useContext(EventContext)
   const user = useContext(UserContext)
@@ -21,21 +23,21 @@ function App() {
       <UserContext.Provider value={user}>
         <div className='App'>
           <Navigation />
-
-          <div className="contentContainer">
-            <Route exact path='/' component={Home} />
+          <Switch>
+            <PrivateRoute exact path='/Home' component={Home} />
             <Route exact path='/' component={Login} />
             <Route exact path='/CreateAnAccount' component={CreateAccount} />
-            <Route exact path='/Events' component={EventsList} />
-            <Route path="/Events/:id" component={EventPage} />
-            <Route exact path='/Users' component={UsersList} />
-            <Route exact path="/Users/:id" component={UserPage} />
-          </div>
+            <PrivateRoute exact path='/Events' component={EventsList} />
+            <PrivateRoute path='/Events/:id' component={EventPage} />
+            <PrivateRoute exact path='/Users' component={UsersList} />
+            <PrivateRoute exact path='/Users/:id' component={UserPage} />
+          </Switch>
         </div>
-        <div style={{marginTop:'200px'}}><p>In Playground.</p></div>
+        <div style={{ marginTop: '200px' }}>
+          <p>In Playground.</p>
+        </div>
       </UserContext.Provider>
     </EventContext.Provider>
-    
   )
 }
 
