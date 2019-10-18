@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab:300,400&display=swap');
   
 h1 {
     font-family: 'Roboto Slab', serif;
@@ -10,6 +9,7 @@ h1 {
 h4 {
     font-family: 'Roboto Slab', serif;
     font-size: 1.8rem;
+    font-weight: 300;
     color:#EBEDF1;
 }
 
