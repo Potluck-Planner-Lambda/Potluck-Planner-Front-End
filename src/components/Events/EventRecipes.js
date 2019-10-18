@@ -2,7 +2,7 @@ import React from "react";
 import EventRecipe from "./EventRecipe";
 
 export default function EventRecipes(props) {
-  console.log(props.recipes);
+  // console.log(props.recipes);
   if (props.recipes) {
     const recipes = props.recipes;
     if (typeof recipes == "object") {

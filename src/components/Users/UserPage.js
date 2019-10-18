@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import UserCard from "./UserCard";
+import UserEvents from "./UserEvents";
 import "./UserPage.scss";
 // import axios from "axios";
-import {axiosWithAuth} from "../../utils/axiosWithAuth"
+import { axiosWithAuth } from "../../utils/axiosWithAuth";
 export default function UserPage(props) {
   //Will eventually refactor page to take in user id from params.match and get() that based on id.
 
@@ -19,9 +20,9 @@ export default function UserPage(props) {
   const [user, setUser] = useState({});
   useEffect(() => {
     axiosWithAuth()
-      .get(`/users${props.match.params.id}`)
+      .get(`/users/${props.match.params.id}`)
       .then(res => {
-        // console.log(res.data);
+        console.log(res.data);
         setUser(res.data);
       })
       .catch(err => console.error(err));
@@ -31,6 +32,10 @@ export default function UserPage(props) {
   return (
     <div>
       <UserCard user={user} />
+      <div>
+        Events:
+        <UserEvents userEvents={user.events}/>
+      </div>
     </div>
   );
 }

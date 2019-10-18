@@ -19,7 +19,7 @@ export default function EventsList() {
     axiosWithAuth()
       .get("")
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         setEvents(res.data);
       })
       .catch(err => console.error(err));
