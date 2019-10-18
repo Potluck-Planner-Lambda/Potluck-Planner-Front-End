@@ -1,11 +1,17 @@
 import React from 'react'
 
 const Home = () => {
+  const handleLogout = () => {
+    localStorage.removeItem('token')
+    window.location.reload()
+  }
 
   return (
-    <div></div>
+    <>
+      <h1>Home</h1>
+      <button onClick={handleLogout}>Log Out</button>
+    </>
   )
-  
 }
 
-export default Home;
+export default Home

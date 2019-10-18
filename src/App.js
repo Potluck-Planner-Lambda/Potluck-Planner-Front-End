@@ -25,7 +25,7 @@ function App() {
         <div className='App'>
           <Navigation />
           <Switch>
-            <Container className="contentContainer">
+            <Container className='contentContainer'>
               <PrivateRoute exact path='/Home' component={Home} />
               <Route exact path='/' component={Login} />
               <Route exact path='/CreateAnAccount' component={CreateAccount} />
