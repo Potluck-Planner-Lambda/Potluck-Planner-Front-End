@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import UserCard from "./UserCard";
 import "./UsersList.scss";
+import { Link } from "react-router-dom";
 import axios from "axios";
+// import {axiosWithAuth} from "../../utils/axiosWithAuth"
 export default function UsersList() {
+  //Will eventually comment out to use imported axiosWithAuth
   const axiosWithAuth = () =>
     axios.create({
       baseURL: "https://potluck-planner-bw.herokuapp.com/users/",
@@ -26,7 +29,9 @@ export default function UsersList() {
   return (
     <div>
       {users.map(user => (
-        <UserCard user={user} />
+        <Link to={`/Users/${user.user_id}`}>
+          <UserCard user={user} />
+        </Link>
       ))}
     </div>
   );

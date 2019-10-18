@@ -10,7 +10,8 @@ import CreateAccount from "./components/CreateAccount";
 import Login from "./components/Login";
 import UsersList from "./components/Users/UsersList";
 import EventsList from "./components/Events/EventsList";
-
+import EventPage from "./components/Events/EventPage";
+import UserPage from "./components/Users/UserPage";
 function App() {
   const event = useContext(EventContext);
   const user = useContext(UserContext);
@@ -25,7 +26,9 @@ function App() {
           <Route exact path="/Login" component={Login} />
           <Route exact path="/CreateAnAccount" component={CreateAccount} />
           <Route exact path="/Events" component={EventsList} />
+          <Route path="/Events/:id" component={EventPage} />
           <Route exact path="/Users" component={UsersList} />
+          <Route exact path="/Users/:id" component={UserPage} />
         </div>
       </UserContext.Provider>
     </EventContext.Provider>

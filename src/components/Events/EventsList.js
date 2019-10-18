@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import EventCard from "./EventCard";
 import "./EventsList.scss";
+import { Link } from "react-router-dom";
 import axios from "axios";
+// import {axiosWithAuth} from "../../utils/axiosWithAuth";
 export default function EventsList() {
+  //Will eventually comment out to use imported axiosWithAuth
   const axiosWithAuth = () =>
     axios.create({
       baseURL: "https://potluck-planner-bw.herokuapp.com/events/",
@@ -26,7 +29,9 @@ export default function EventsList() {
   return (
     <div>
       {events.map(event => (
-        <EventCard event={event} />
+        <Link to={`/Events/${event.event_id}`}>
+          <EventCard event={event} />
+        </Link>
       ))}
     </div>
   );
