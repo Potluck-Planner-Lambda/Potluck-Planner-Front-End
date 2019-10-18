@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import { Card, Container, Col, Button, Form, Input } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Login.scss';
-import Logo from '../photos/Logos/MainLogo.svg';
+import Logo from '../../photos/Logos/MainLogo.svg';
 
 export class Login extends Component {
   state = {
