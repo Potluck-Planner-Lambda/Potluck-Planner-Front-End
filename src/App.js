@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import './App.css'
 import { Route, Switch } from 'react-router-dom'
-import { Container } from 'reactstrap'
 
 import UserContext from './contexts/UserContext'
 import EventContext from './contexts/EventContext'
