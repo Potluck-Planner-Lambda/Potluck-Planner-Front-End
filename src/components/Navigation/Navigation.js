@@ -22,15 +22,17 @@ const Navigation = props => {
   const toggle = () => setIsOpen(!isOpen)
 
   return (
-    <Navbar color="light" light expand="md">
-      <NavbarBrand href="/"><img src={ Logo } alt='Potluck Logo' className='navLogo'/></NavbarBrand>
+    <Navbar color='light' light expand='md'>
+      <NavbarBrand href='/'>
+        <img src={Logo} alt='Potluck Logo' className='navLogo' />
+      </NavbarBrand>
 
       <NavbarToggler onClick={toggle} />
 
       <Collapse isOpen={isOpen} navbar>
         <Nav className='ml-auto' navbar>
           <NavItem>
-            <NavLink href="/">Home</NavLink>
+            <NavLink href='/Home'>Home</NavLink>
           </NavItem>
 
           <NavItem>
