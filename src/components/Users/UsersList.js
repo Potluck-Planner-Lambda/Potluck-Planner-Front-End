@@ -30,7 +30,7 @@ export default function UsersList() {
     <div>
       {users.map(user => (
         <Link to={`/Users/${user.user_id}`}>
-          <UserCard user={user} />
+          <UserCard user={user} id={user.user_id} />
         </Link>
       ))}
     </div>

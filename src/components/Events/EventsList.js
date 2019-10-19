@@ -30,7 +30,7 @@ export default function EventsList() {
     <div>
       {events.map(event => (
         <Link to={`/Events/${event.event_id}`}>
-          <EventCard event={event} />
+          <EventCard event={event} id={event.event_id} />
         </Link>
       ))}
     </div>
