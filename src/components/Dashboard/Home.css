@@ -31,10 +31,7 @@ h4.dashboard-welcome {
 }
 
 .dashboard-actions {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 1em .5em 1em 0;
+    margin: .25em .5em .5em 0;
 }
 
 .sidebarIcon {
@@ -42,15 +39,35 @@ h4.dashboard-welcome {
     height: 2.5rem;
 }
 
+@media (max-width:550px) {
+  .sidebarIcon {
+    display: none;
+  }
+}
+
+.buttonContainer {
+  border-top: 1px solid white;
+  margin-top: 4em;
+  padding-top: 2em;
+}
+
 .sidebarButton {
     font-size: 1.6rem;
     background-color:rgba(119, 126, 140, 1);
     border: none;
     color: #DDDDDD;
+    padding: 0;
     margin-right: .25em;
-    min-width: 6.5em;
 }
-
+.sidebarButton:hover {
+  background-color:rgba(119, 126, 140, 1);
+  text-decoration: underline;
+}
 .buttonIcon {
-    height: 1em;
+    width: 1.2em;
+}
+@media (max-width:550px) {
+  .buttonIcon {
+    display: none;
+  }
 }

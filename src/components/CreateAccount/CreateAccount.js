@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { Card, Container, Col, Row, Button, Form, Input } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css'
+import './CreateAccount.scss'
+
 import Logo from '../../photos/Logos/MainLogo.svg'
 import GreenCheck from '../../photos/Icons/charmark-green.svg'
-import './CreateAccount.scss'
+
 
 const CreateAccount = () => {
   return (
@@ -56,12 +58,6 @@ const CreateAccount = () => {
 
               <Row>
                 <Col>
-                  <Input
-                    type='number'
-                    name='phonenumber'
-                    placeholder='Phone Number (555) 555-5555'
-                    className='signUpInput inputBorder'
-                  />
 
                   <Input
                     type='email'
