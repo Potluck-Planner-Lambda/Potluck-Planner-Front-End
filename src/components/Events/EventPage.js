@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import EventCard from "./EventCard";
 import "./EventPage.scss";
-import EventGuests from "./EventGuests";
-import EventRecipes from "./EventRecipes";
+
 // import axios from "axios";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 export default function EventPage(props) {
@@ -23,7 +22,7 @@ export default function EventPage(props) {
     axiosWithAuth()
       .get(`events/${props.match.params.id}`)
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         setEvent(res.data);
       })
       .catch(err => console.error(err));
@@ -33,13 +32,7 @@ export default function EventPage(props) {
   return (
     <div>
       Event Page:
-      <EventCard event={event} />
-      <div>
-        Recipes:
-        <EventRecipes recipes={event.recipes} />
-        Guests:
-        <EventGuests guest={event.guests} />
-      </div>
+      <EventCard event={event} id={props.match.params.id} />
     </div>
   );
 }
