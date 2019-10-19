@@ -17,6 +17,7 @@ export default function UserPage(props) {
   //   });
 
   // const [user, setUser] = useState(props.user);
+  console.log(props);
   const [user, setUser] = useState({});
   useEffect(() => {
     axiosWithAuth()
