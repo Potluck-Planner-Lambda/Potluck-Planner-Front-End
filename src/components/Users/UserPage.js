@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import UserCard from "./UserCard";
+import React, { useState, useEffect } from 'react'
+import UserCard from './UserCard'
 // import UserEvents from "./UserEvents";
-import "./UserPage.scss";
-import Sidebar from "../Dashboard/Sidebar";
+import './UserPage.scss'
+import Sidebar from '../Dashboard/Sidebar'
 // import axios from "axios";
-import { axiosWithAuth } from "../../utils/axiosWithAuth";
+import { axiosWithAuth } from '../../utils/axiosWithAuth'
 export default function UserPage(props) {
   //Will eventually refactor page to take in user id from params.match and get() that based on id.
 
@@ -19,20 +19,20 @@ export default function UserPage(props) {
 
   // const [user, setUser] = useState(props.user);
   // console.log(props);
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({})
   useEffect(() => {
     axiosWithAuth()
       .get(`/users/${props.match.params.id}`)
       .then(res => {
         // console.log(res.data);
-        setUser(res.data);
+        setUser(res.data)
       })
-      .catch(err => console.error(err));
-  }, []);
+      .catch(err => console.error(err))
+  }, [props.match.params.id])
 
   // console.log(users[0]);
   return (
-    <div className="mainUserPage">
+    <div className='mainUserPage'>
       <Sidebar />
       {/* <UserCard user={user} />
       <UserEvents UserEvents={user.events} /> */}
@@ -42,5 +42,5 @@ export default function UserPage(props) {
         id={props.match.params.id}
       />
     </div>
-  );
+  )
 }
