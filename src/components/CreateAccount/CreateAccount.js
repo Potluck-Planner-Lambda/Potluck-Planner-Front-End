@@ -33,7 +33,7 @@ const CreateAccount = props => {
         user.username=registerUser.username;
         localStorage.setItem("username",registerUser.username);
         // console.log(props.history);
-        // props.history.push("/Home");
+        props.history.push("/Home");
       })
       .catch(err => console.error(err));
   };

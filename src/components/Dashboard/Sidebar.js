@@ -15,7 +15,7 @@ const Sidebar = () => {
     window.location.reload();
   };
   const { user } = useContext(UserContext);
-  console.log(user);
+  // console.log(user);
   return (
     <>
       <Col className="dashboard-sidebar">

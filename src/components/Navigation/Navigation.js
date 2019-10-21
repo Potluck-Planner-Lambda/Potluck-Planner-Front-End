@@ -22,7 +22,7 @@ const Navigation = props => {
   const { user } = useContext(UserContext);
   const toggle = () => setIsOpen(!isOpen);
 
-  console.log(user.user_id);
+  // console.log(user.user_id);
   return (
     <Navbar color="light" light expand="md">
       <NavbarBrand href="/">
@@ -36,15 +36,15 @@ const Navigation = props => {
           <NavItem>
             <NavLink href="/Home">Home</NavLink>
           </NavItem>
-
+          <NavItem>
+            <NavLink href="/Calendar">Calendar</NavLink>
+          </NavItem>
           <NavItem>
             <NavLink href="/Events">Events</NavLink>
           </NavItem>
-
           <NavItem>
             <NavLink href="/Users">Users</NavLink>
           </NavItem>
-
           <UncontrolledDropdown nav inNavbar>
             <DropdownToggle nav caret>
               Account

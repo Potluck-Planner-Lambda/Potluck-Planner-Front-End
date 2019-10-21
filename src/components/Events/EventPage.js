@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import EventCard from "./EventCard";
 import "./EventPage.scss";
-
+import Sidebar from "../Dashboard/Sidebar";
 // import axios from "axios";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 export default function EventPage(props) {
@@ -26,11 +26,12 @@ export default function EventPage(props) {
         setEvent(res.data);
       })
       .catch(err => console.error(err));
-  }, []);
-
-  // console.log(users[0]);
-  return (
-    <div>
+    }, []);
+    
+    // console.log(users[0]);
+    return (
+      <div>
+      <Sidebar />
       Event Page:
       <EventCard event={event} id={props.match.params.id} />
     </div>

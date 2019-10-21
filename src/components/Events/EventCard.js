@@ -1,10 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import EventGuests from "./EventGuests";
 import EventRecipes from "./EventRecipes";
+import UserContext from "../../contexts/UserContext";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 export default function EventCard(props) {
   const [event, setEvent] = useState({});
-
+  const { user } = useContext(UserContext);
+  const attend = () => {
+    // console.log("I want to attend: " + user.username + " " + user.user_id);
+    axiosWithAuth()
+      .post(`events/${props.id}/guests`, {
+        user_id: user.user_id,
+        attending: true
+      })
+      .then(res => {
+        console.log(res.data);
+        setEvent({guests:res.data});
+      })
+      .catch(err => console.error(err));
+  };
+  const unattend = () => {
+    // console.log(
+    //   "I don't want to attend: " + user.username + " " + user.user_id
+    // );
+    axiosWithAuth()
+      .put(`events/${props.id}/guests/${user.user_id}`, {
+        attending: false
+      })
+      .then(res => {
+        console.log(res.data);
+        setEvent({guests:res.data});
+      })
+      .catch(err => console.error(err));
+  };
   useEffect(() => {
     axiosWithAuth()
       .get(`events/${props.id}`)
@@ -43,6 +71,8 @@ export default function EventCard(props) {
       <EventRecipes recipes={event.recipes} />
       Guests:
       <EventGuests guests={event.guests} />
+      <button onClick={attend}>RSVP</button>
+      <button onClick={unattend}>Cancel RSVP</button>
     </div>
   );
 }

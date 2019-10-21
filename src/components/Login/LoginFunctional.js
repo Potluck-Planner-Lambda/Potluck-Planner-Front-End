@@ -37,6 +37,7 @@ export default function LoginFunctional(props) {
         console.log(res.data);
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("username", state.credentials.username);
+        localStorage.setItem("user_id", res.data.user_id);
         setUser({
           username: state.credentials.username,
           user_id: res.data.user_id

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import EventCard from "./EventCard";
 import "./EventsList.scss";
+import Sidebar from "../Dashboard/Sidebar";
 import { Link } from "react-router-dom";
 import axios from "axios";
 // import {axiosWithAuth} from "../../utils/axiosWithAuth";
@@ -28,6 +29,7 @@ export default function EventsList() {
   // console.log(events[0]);
   return (
     <div>
+      <Sidebar />
       {events.map(event => (
         <Link to={`/Events/${event.event_id}`}>
           <EventCard event={event} id={event.event_id} />
