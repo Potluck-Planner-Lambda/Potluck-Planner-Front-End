@@ -28,9 +28,9 @@ export default function EventsList() {
 
   // console.log(events[0]);
   return (
-    <div>
+    <div className="mainEventsList">
       <Sidebar />
-      {events.map(event => (
+      {[...events].reverse().map(event => (
         <Link to={`/Events/${event.event_id}`}>
           <EventCard event={event} id={event.event_id} />
         </Link>

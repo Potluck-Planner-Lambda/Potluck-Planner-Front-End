@@ -15,7 +15,7 @@ export default function EventCard(props) {
       })
       .then(res => {
         console.log(res.data);
-        setEvent({guests:res.data});
+        setEvent({ guests: res.data });
       })
       .catch(err => console.error(err));
   };
@@ -29,7 +29,7 @@ export default function EventCard(props) {
       })
       .then(res => {
         console.log(res.data);
-        setEvent({guests:res.data});
+        setEvent({ guests: res.data });
       })
       .catch(err => console.error(err));
   };
@@ -58,6 +58,17 @@ export default function EventCard(props) {
   // console.log(event.recipes);
   // console.log(event.events);
   // console.log(event_id, event_name, address, city, date, description, organizer_id, state, time);
+  // console.log(event.guests);
+  let buttons = <button onClick={attend}>RSVP</button>;
+  if (event.guests) {
+    if (
+      event.guests.filter(
+        guest => user.user_id == guest.user_id && guest.attending
+      ).length > 0
+    ) {
+      buttons = <button onClick={unattend}>Cancel RSVP</button>;
+    }
+  }
   return (
     <div className="EventCard">
       <h3 className="title">{event_name}</h3>
@@ -71,8 +82,7 @@ export default function EventCard(props) {
       <EventRecipes recipes={event.recipes} />
       Guests:
       <EventGuests guests={event.guests} />
-      <button onClick={attend}>RSVP</button>
-      <button onClick={unattend}>Cancel RSVP</button>
+      {buttons}
     </div>
   );
 }

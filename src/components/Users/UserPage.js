@@ -32,7 +32,7 @@ export default function UserPage(props) {
 
   // console.log(users[0]);
   return (
-    <div>
+    <div className="mainUserPage">
       <Sidebar />
       {/* <UserCard user={user} />
       <UserEvents UserEvents={user.events} /> */}

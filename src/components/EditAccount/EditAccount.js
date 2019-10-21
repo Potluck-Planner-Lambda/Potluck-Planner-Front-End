@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import UserContext from "../../contexts/UserContext";
 import { Card, Container, Col, Row, Button, Form, Input } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.css";
-import "../CreateAccount/CreateAccount.scss";
+import "./EditAccount.scss";
 // import axios from "axios";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 import Logo from "../../photos/Logos/MainLogo.svg";

@@ -1,28 +1,42 @@
-.EventCard {
-  border: 2px solid black;
-  padding: 10px;
-  margin: 20px;
-  border-radius: 3px;
+.mainEventsList {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
 
-  .title {
-    font-size: 2rem;
+  a {
+    text-decoration: none;
+    color: black;
   }
 
-  .who {
-    font-style: italic;
-  }
+  .EventCard {
+    width: 60%;
+    border: 2px solid black;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  .what {
-    font-size: 1.5rem;
-  }
+    .title {
+      font-size: 2rem;
+    }
 
-  .when {}
+    .who {
+      font-style: italic;
+    }
 
-  .where {
-    font-weight: bold;
+    .what {
+      font-size: 1.5rem;
+    }
+
+    .when {}
+
+    .where {
+      font-weight: bold;
+    }
   }
 }

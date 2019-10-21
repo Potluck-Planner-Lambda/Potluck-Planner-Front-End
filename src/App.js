@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation/Navigation";
 import Home from "./components/Dashboard/Home";
 import CreateAccount from "./components/CreateAccount/CreateAccount";
 import EditAccount from "./components/EditAccount/EditAccount";
+import CreateEvent from "./components/Events/CreateEvent";
 // import Login from "./components/Login/Login";
 import LoginFunctional from "./components/Login/LoginFunctional";
 import UsersList from "./components/Users/UsersList";
@@ -35,14 +36,14 @@ function App() {
             <PrivateRoute path="/Calendar" component={Calendar} />
             <Route exact path="/" component={LoginFunctional} />
             <Route exact path="/CreateAnAccount" component={CreateAccount} />
-            {/* <Route exact path="/EditAccount" component={EditAccount} /> */}
+            <PrivateRoute exact path="/CreateEvent" component={CreateEvent} />
             <PrivateRoute
               exact
               path="/Users/:id/EditAccount"
               component={EditAccount}
             />
             <PrivateRoute exact path="/Events" component={EventsList} />
-            <PrivateRoute path="/Events/:id" component={EventPage} />
+            <PrivateRoute exact path="/Events/:id" component={EventPage} />
             <PrivateRoute exact path="/Users" component={UsersList} />
             <PrivateRoute exact path="/Users/:id" component={UserPage} />
           </Switch>

@@ -14,23 +14,23 @@ export default function UsersList() {
         authorization: localStorage.getItem("token")
       }
     });
-    
-    const [users, setUsers] = useState([]);
-    useEffect(() => {
-      axiosWithAuth()
+
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    axiosWithAuth()
       .get("")
       .then(res => {
         // console.log(res.data);
         setUsers(res.data);
       })
       .catch(err => console.error(err));
-    }, []);
-    
-    // console.log(users[0]);
-    return (
-      <div>
+  }, []);
+
+  // console.log(users[0]);
+  return (
+    <div className="mainUsersList">
       <Sidebar />
-      {users.map(user => (
+      {[...users].reverse().map(user => (
         <Link to={`/Users/${user.user_id}`}>
           <UserCard user={user} id={user.user_id} />
         </Link>
