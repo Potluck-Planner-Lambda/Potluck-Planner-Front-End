@@ -1,14 +1,16 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Col, Row, Button } from 'reactstrap'
+import { Link } from 'react-router-dom'
+import { axiosWithAuth } from '../../utils/axiosWithAuth'
 import 'bootstrap/dist/css/bootstrap.css'
 import './Home.css'
+
 import UserContext from '../../contexts/UserContext'
 import SidebarCreateEvent from '../../photos/Icons/create-event-sidebar.svg'
 import SidebarPotluckInvite from '../../photos/Icons/potluck-invite-sidebar.svg'
 import SidebarDashboardIcon from '../../photos/Icons/dashboard-eye-sidebar.svg'
 import SidebarLogoutIcon from '../../photos/Icons/logout-sidebar.svg'
-import { Link } from 'react-router-dom'
-import { axiosWithAuth } from '../../utils/axiosWithAuth'
+
 const Sidebar = () => {
   const handleLogout = () => {
     localStorage.removeItem('token')
@@ -46,9 +48,9 @@ const Sidebar = () => {
       <Col className='dashboard-sidebar'>
         <Col className='dashboard-sidebarContainer'>
           <Row>
-            <h3 className='dashboard-welcome'>
+            <h4 className='dashboard-welcome'>
               Welcome Back, {user.username}!
-            </h3>
+            </h4>
             {/* <h4 className="dashboard-welcome">Welcome Back, {localStorage.getItem("username")}</h4> */}
           </Row>
 
@@ -75,8 +77,13 @@ const Sidebar = () => {
               No Potluck Invites
             </h4>
           </Row>
-          <h3 className='dashboard-events'>Upcoming Events:</h3>
+          <Row>
+            <h4 className='dashboard-events'>Upcoming Events:</h4>
+          </Row>
+          {/* Upcoming Event List */}
+
           {list}
+
           <Row className='buttonContainer'>
             <Col>
               <Row>

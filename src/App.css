@@ -24,3 +24,7 @@ button {
 .container {
     padding-top: 3%;
 }
+
+a:hover {
+    text-decoration: none;
+}
