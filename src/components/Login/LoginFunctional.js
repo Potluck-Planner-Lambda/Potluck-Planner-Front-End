@@ -29,11 +29,18 @@ export default function LoginFunctional(props) {
     e.preventDefault();
 
     axios
-      .post("https://potluck-planner-bw.herokuapp.com/users/login", state.credentials)
+      .post(
+        "https://potluck-planner-bw.herokuapp.com/users/login",
+        state.credentials
+      )
       .then(res => {
+        console.log(res.data);
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("username", state.credentials.username);
-        setUser({ username: state.credentials.username });
+        setUser({
+          username: state.credentials.username,
+          user_id: res.data.user_id
+        });
         props.history.push("/Home");
       })
       .catch(err => console.log(err));

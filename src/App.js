@@ -7,6 +7,7 @@ import EventContext, { EventProvider } from "./contexts/EventContext";
 import Navigation from "./components/Navigation/Navigation";
 import Home from "./components/Dashboard/Home";
 import CreateAccount from "./components/CreateAccount/CreateAccount";
+import EditAccount from "./components/EditAccount/EditAccount";
 // import Login from "./components/Login/Login";
 import LoginFunctional from "./components/Login/LoginFunctional";
 import UsersList from "./components/Users/UsersList";
@@ -32,6 +33,8 @@ function App() {
             <PrivateRoute exact path="/Home" component={Home} />
             <Route exact path="/" component={LoginFunctional} />
             <Route exact path="/CreateAnAccount" component={CreateAccount} />
+            {/* <Route exact path="/EditAccount" component={EditAccount} /> */}
+            <Route exact path="/Users/:id/EditAccount" component={EditAccount} />
             <PrivateRoute exact path="/Events" component={EventsList} />
             <PrivateRoute path="/Events/:id" component={EventPage} />
             <PrivateRoute exact path="/Users" component={UsersList} />
