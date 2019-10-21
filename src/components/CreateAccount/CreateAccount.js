@@ -21,7 +21,7 @@ const CreateAccount = props => {
       username: e.target.username.value,
       full_name: e.target.full_name.value,
       email: e.target.email.value,
-      password: e.target.full_name.value
+      password: e.target.password.value
     };
     axios
       .post(
@@ -33,7 +33,7 @@ const CreateAccount = props => {
         user.username=registerUser.username;
         localStorage.setItem("username",registerUser.username);
         // console.log(props.history);
-        props.history.push("/Home");
+        // props.history.push("/Home");
       })
       .catch(err => console.error(err));
   };
