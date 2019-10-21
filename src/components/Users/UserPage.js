@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import UserCard from "./UserCard";
 // import UserEvents from "./UserEvents";
 import "./UserPage.scss";
+import Sidebar from "../Dashboard/Sidebar";
 // import axios from "axios";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 export default function UserPage(props) {
@@ -17,7 +18,7 @@ export default function UserPage(props) {
   //   });
 
   // const [user, setUser] = useState(props.user);
-  console.log(props);
+  // console.log(props);
   const [user, setUser] = useState({});
   useEffect(() => {
     axiosWithAuth()
@@ -31,7 +32,8 @@ export default function UserPage(props) {
 
   // console.log(users[0]);
   return (
-    <div>
+    <div className="mainUserPage">
+      <Sidebar />
       {/* <UserCard user={user} />
       <UserEvents UserEvents={user.events} /> */}
       <UserCard

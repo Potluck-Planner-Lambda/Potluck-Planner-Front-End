@@ -4,7 +4,7 @@ export default function EventGuests(props) {
   // console.log(props.guests);
   if (props.guests !== undefined) {
     // console.log(props.guests);
-    return props.guests.map(guest => <EventGuest guest={guest} />);
+    return props.guests.filter(guest=>guest.attending).map(guest => <EventGuest guest={guest} />);
   } else {
     return <div>No Guests Signed Up</div>;
   }

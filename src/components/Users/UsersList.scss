@@ -1,26 +1,39 @@
-.UserCard {
-  border: 2px solid black;
-  padding: 10px;
-  margin: 20px;
-  border-radius: 3px;
+.mainUsersList {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
 
-  .title {
-    font-size: 2rem;
+  a {
+    text-decoration: none;
+    color: black;
   }
 
-  .email {
-    font-style: italic;
-  }
+  .UserCard {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  .username {
-    font-size: 1.5rem;
-  }
+    .title {
+      font-size: 2rem;
+    }
 
-  .user_id {
-    font-weight: bold;
+    .email {
+      font-style: italic;
+    }
+
+    .username {
+      font-size: 1.5rem;
+    }
+
+    .user_id {
+      font-weight: bold;
+    }
   }
 }

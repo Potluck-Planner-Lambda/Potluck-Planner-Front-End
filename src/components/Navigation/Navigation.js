@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from "react";
 import {
   Collapse,
   Navbar,
@@ -11,48 +11,56 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem
-} from 'reactstrap'
-import 'bootstrap/dist/css/bootstrap.css'
-import './Navigation.scss'
-import Logo from '../../photos/Logos/MainLogo.svg'
+} from "reactstrap";
+import "bootstrap/dist/css/bootstrap.css";
+import "./Navigation.scss";
+import UserContext from "../../contexts/UserContext";
+import Logo from "../../photos/Logos/MainLogo.svg";
 
 const Navigation = props => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const { user } = useContext(UserContext);
+  const toggle = () => setIsOpen(!isOpen);
 
-  const toggle = () => setIsOpen(!isOpen)
-
+  // console.log(user.user_id);
   return (
-    <Navbar color='light' light expand='md'>
-      <NavbarBrand href='/'>
-        <img src={Logo} alt='Potluck Logo' className='navLogo' />
+    <Navbar color="light" light expand="md">
+      <NavbarBrand href="/">
+        <img src={Logo} alt="Potluck Logo" className="navLogo" />
       </NavbarBrand>
 
       <NavbarToggler onClick={toggle} />
 
       <Collapse isOpen={isOpen} navbar>
-        <Nav className='ml-auto' navbar>
+        <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink href='/Home'>Home</NavLink>
+            <NavLink href="/Home">Home</NavLink>
           </NavItem>
-
           <NavItem>
-            <NavLink href='/Events'>Events</NavLink>
+            <NavLink href="/Calendar">Calendar</NavLink>
           </NavItem>
-
           <NavItem>
-            <NavLink href='/Users'>Users</NavLink>
+            <NavLink href="/Events">Events</NavLink>
           </NavItem>
-
+          <NavItem>
+            <NavLink href="/Users">Users</NavLink>
+          </NavItem>
           <UncontrolledDropdown nav inNavbar>
             <DropdownToggle nav caret>
               Account
             </DropdownToggle>
             <DropdownMenu right>
               <DropdownItem>
-                <NavLink href='/CreateAnAccount'>Create Account</NavLink>
+                <NavLink href="/CreateAnAccount">Create Account</NavLink>
               </DropdownItem>
               <DropdownItem>
-                <NavLink href='/'>Login</NavLink>
+                <NavLink href="/">Login</NavLink>
+              </DropdownItem>
+              <DropdownItem>
+                {/* <NavLink href="/EditAccount">Edit Account</NavLink> */}
+                <NavLink href={`/Users/${user.user_id}/EditAccount`}>
+                  Edit Account
+                </NavLink>
               </DropdownItem>
               {/* <DropdownItem divider /> */}
             </DropdownMenu>
@@ -60,8 +68,8 @@ const Navigation = props => {
         </Nav>
       </Collapse>
     </Navbar>
-  )
-}
+  );
+};
 
 // const Navigation = () => {
 //   return (
@@ -87,4 +95,4 @@ const Navigation = props => {
 //   )
 // }
 
-export default Navigation
+export default Navigation;
