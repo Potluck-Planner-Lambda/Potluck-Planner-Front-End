@@ -25,7 +25,7 @@ const Navigation = props => {
   // console.log(user.user_id);
   return (
     <Navbar color="light" light expand="md">
-      <NavbarBrand href="/">
+      <NavbarBrand href="/Home">
         <img src={Logo} alt="Potluck Logo" className="navLogo" />
       </NavbarBrand>
 

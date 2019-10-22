@@ -1,64 +1,66 @@
-import React, { useContext, useState, useEffect } from "react";
-import { Col, Row, Button } from "reactstrap";
-import "bootstrap/dist/css/bootstrap.css";
-import "./Home.css";
-import UserContext from "../../contexts/UserContext";
-import SidebarCreateEvent from "../../photos/Icons/create-event-sidebar.svg";
-import SidebarPotluckInvite from "../../photos/Icons/potluck-invite-sidebar.svg";
-import SidebarDashboardIcon from "../../photos/Icons/dashboard-eye-sidebar.svg";
-import SidebarLogoutIcon from "../../photos/Icons/logout-sidebar.svg";
-import { Link } from "react-router-dom";
-import { axiosWithAuth } from "../../utils/axiosWithAuth";
+import React, { useContext, useState, useEffect } from 'react'
+import { Col, Row, Button } from 'reactstrap'
+import { Link } from 'react-router-dom'
+import { axiosWithAuth } from '../../utils/axiosWithAuth'
+import 'bootstrap/dist/css/bootstrap.css'
+import './Home.css'
+
+import UserContext from '../../contexts/UserContext'
+import SidebarCreateEvent from '../../photos/Icons/create-event-sidebar.svg'
+import SidebarPotluckInvite from '../../photos/Icons/potluck-invite-sidebar.svg'
+import SidebarDashboardIcon from '../../photos/Icons/dashboard-eye-sidebar.svg'
+import SidebarLogoutIcon from '../../photos/Icons/logout-sidebar.svg'
+
 const Sidebar = () => {
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("username");
-    window.location.reload();
-  };
-  const [userEvents, setUserEvents] = useState([]);
-  const { user, setUser } = useContext(UserContext);
+    localStorage.removeItem('token')
+    localStorage.removeItem('username')
+    window.location.reload()
+  }
+  const [userEvents, setUserEvents] = useState([])
+  const { user, setUser } = useContext(UserContext)
   useEffect(() => {
     axiosWithAuth()
       .get(`users/${user.user_id}/events`)
       .then(res => {
         // console.log(res.data);
-        setUserEvents(res.data);
-        setUser({ ...user, events: res.data.filter(event => event.attending) });
+        setUserEvents(res.data)
+        setUser({ ...user, events: res.data.filter(event => event.attending) })
       })
-      .catch(err => console.error(err));
-  }, []);
+      .catch(err => console.error(err))
+  }, [user, setUser])
   const list = userEvents ? (
     userEvents
       .filter(event => event.attending)
       .map(event => (
         <Row>
           <Link to={`/Events/${event.event_id}`}>
-            <h4 className="dashboard-actions">{event.event_name}</h4>
+            <h4 className='dashboard-actions'>{event.event_name}</h4>
           </Link>
         </Row>
       ))
   ) : (
     <></>
-  );
+  )
   // console.log(user);
   return (
     <>
-      <Col className="dashboard-sidebar">
-        <Col className="dashboard-sidebarContainer">
+      <Col className='dashboard-sidebar'>
+        <Col className='dashboard-sidebarContainer'>
           <Row>
-            <h3 className="dashboard-welcome">
+            <h4 className='dashboard-welcome'>
               Welcome Back, {user.username}!
-            </h3>
+            </h4>
             {/* <h4 className="dashboard-welcome">Welcome Back, {localStorage.getItem("username")}</h4> */}
           </Row>
 
           <Row>
-            <Link to={"/CreateEvent"}>
-              <h4 className="dashboard-actions">
+            <Link to={'/CreateEvent'}>
+              <h4 className='dashboard-actions'>
                 <img
-                  className="sidebarIcon"
+                  className='sidebarIcon'
                   src={SidebarCreateEvent}
-                  alt="Create Event Icon"
+                  alt='Create Event Icon'
                 />
                 Create Event
               </h4>
@@ -66,27 +68,32 @@ const Sidebar = () => {
           </Row>
 
           <Row>
-            <h4 className="dashboard-actions">
+            <h4 className='dashboard-actions'>
               <img
-                className="sidebarIcon"
+                className='sidebarIcon'
                 src={SidebarPotluckInvite}
-                alt="Calendar Icon"
+                alt='Calendar Icon'
               />
               No Potluck Invites
             </h4>
           </Row>
-          <h3 className="dashboard-events">Upcoming Events:</h3>
+          <Row>
+            <h4 className='dashboard-events'>Upcoming Events:</h4>
+          </Row>
+          {/* Upcoming Event List */}
+
           {list}
-          <Row className="buttonContainer">
+
+          <Row className='buttonContainer'>
             <Col>
               <Row>
-                <Link to="/Home">
-                  {" "}
-                  <Button className="dashboard-button sidebarButton">
+                <Link to='/Home'>
+                  {' '}
+                  <Button className='dashboard-button sidebarButton'>
                     <img
-                      className="sidebarIcon buttonIcon"
+                      className='sidebarIcon buttonIcon'
                       src={SidebarDashboardIcon}
-                      alt="Dashboard Icon"
+                      alt='Dashboard Icon'
                     />
                     Dashboard
                   </Button>
@@ -95,13 +102,13 @@ const Sidebar = () => {
 
               <Row>
                 <Button
-                  className="dashboard-logout sidebarButton"
+                  className='dashboard-logout sidebarButton'
                   onClick={handleLogout}
                 >
                   <img
-                    className="sidebarIcon buttonIcon"
+                    className='sidebarIcon buttonIcon'
                     src={SidebarLogoutIcon}
-                    alt="User Icon"
+                    alt='User Icon'
                   />
                   Log Out
                 </Button>
@@ -111,7 +118,7 @@ const Sidebar = () => {
         </Col>
       </Col>
     </>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

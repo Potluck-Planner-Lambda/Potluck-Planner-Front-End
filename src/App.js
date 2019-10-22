@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 
@@ -9,6 +9,7 @@ import Home from "./components/Dashboard/Home";
 import CreateAccount from "./components/CreateAccount/CreateAccount";
 import EditAccount from "./components/EditAccount/EditAccount";
 import CreateEvent from "./components/Events/CreateEvent";
+import EditEvent from "./components/Events/EditEvent";
 // import Login from "./components/Login/Login";
 import LoginFunctional from "./components/Login/LoginFunctional";
 import UsersList from "./components/Users/UsersList";
@@ -37,6 +38,7 @@ function App() {
             <Route exact path="/" component={LoginFunctional} />
             <Route exact path="/CreateAnAccount" component={CreateAccount} />
             <PrivateRoute exact path="/CreateEvent" component={CreateEvent} />
+            <PrivateRoute exact path="/EditEvent/:id" component={EditEvent} />
             <PrivateRoute
               exact
               path="/Users/:id/EditAccount"

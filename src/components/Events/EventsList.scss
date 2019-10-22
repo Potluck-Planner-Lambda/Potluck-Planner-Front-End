@@ -8,21 +8,35 @@
   a {
     text-decoration: none;
     color: black;
+    width: 48%;
+    padding: 10px;
   }
 
-  .EventCard {
-    width: 60%;
+  .EventCardDiv {
+    // width: 60%;
     border: 2px solid black;
-    padding: 30px;
     margin-bottom: 20px;
     border-radius: 3px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: #EBEDF1;
+    padding: 30px;
+
+    .EventCard {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
     .title {
       font-size: 2rem;
+      font-family: 'Roboto';
+      font-weight: bold;
+      text-transform: uppercase;
     }
 
     .who {
@@ -30,13 +44,72 @@
     }
 
     .what {
-      font-size: 1.5rem;
+      font-family: 'Roboto';
+      font-size: 1.4em;
+      margin: .5em 1em;
     }
 
-    .when {}
+    h4 {
+      color: black;
+      font-family: 'Roboto';
+      font-size: 1.4em;
+      font-weight: bold;
+      margin: 1em 1em 0 1em;
+    }
+
+    .when {
+      font-family: 'Roboto';
+      font-size: 1.4em;
+      margin-left: 1em;
+      margin-top: .25em;
+    }
 
     .where {
+      font-family: 'Roboto';
+      font-size: 1.4em;
       font-weight: bold;
+      margin: 1em 1em 0 1em;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      width: 80%;
+      margin: 0 auto;
+
+      &:hover {
+        color: gray;
+      }
+
+      button {
+        margin: 0 auto;
+      }
+
+      p {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+
+
+    button,
+    .eventDetailsLink {
+      font-family: 'Roboto';
+      font-size: 1.4rem;
+      margin: .5em 0 0 .5em;
+      font-weight: bold;
+      letter-spacing: 1.25px;
+      text-transform: uppercase;
+      color: #EF4723;
+      padding: 1rem;
+      display: block;
+      padding-bottom: 1em;
+
+      &:hover {
+        text-decoration: none;
+        color: black;
+      }
     }
   }
 }

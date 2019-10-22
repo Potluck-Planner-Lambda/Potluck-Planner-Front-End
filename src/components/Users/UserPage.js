@@ -28,7 +28,7 @@ export default function UserPage(props) {
         setUser(res.data);
       })
       .catch(err => console.error(err));
-  }, []);
+  }, [props.match.params.id]);
 
   // console.log(users[0]);
   return (
@@ -36,11 +36,13 @@ export default function UserPage(props) {
       <Sidebar />
       {/* <UserCard user={user} />
       <UserEvents UserEvents={user.events} /> */}
-      <UserCard
-        user={user}
-        UserEvents={user.events}
-        id={props.match.params.id}
-      />
+      <div class="mainContent">
+        <UserCard
+          user={user}
+          UserEvents={user.events}
+          id={props.match.params.id}
+        />
+      </div>
     </div>
   );
 }

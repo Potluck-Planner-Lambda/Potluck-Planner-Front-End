@@ -26,13 +26,15 @@ export default function EventPage(props) {
         setEvent(res.data);
       })
       .catch(err => console.error(err));
-    }, [props.match.params.id]);
-    
-    // console.log(users[0]);
-    return (
-      <div className="mainEventPage">
+  }, [props.match.params.id]);
+
+  // console.log(users[0]);
+  return (
+    <div className="mainEventPage">
       <Sidebar />
-      <EventCard event={event} id={props.match.params.id} />
+      <div className="mainContent">
+        <EventCard event={event} id={props.match.params.id} />
+      </div>
     </div>
   );
 }
