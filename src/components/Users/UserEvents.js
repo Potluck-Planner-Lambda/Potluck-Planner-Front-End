@@ -10,9 +10,9 @@ export default function UserEvents(props) {
         <div>
           <h4>Upcoming Events:</h4>
           {attendingEvents.map(event => (
-            <Link to={`/Events/${event.event_id}`}>
-              <p> {event.event_name}</p>
-            </Link>
+            <p key={event.event_id}>
+              <Link to={`/Events/${event.event_id}`}>{event.event_name}</Link>
+            </p>
           ))}
         </div>
       );

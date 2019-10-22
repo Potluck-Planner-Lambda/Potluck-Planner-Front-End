@@ -3,6 +3,7 @@ import EventGuests from "./EventGuests";
 import EventRecipes from "./EventRecipes";
 import UserContext from "../../contexts/UserContext";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
+import { Link } from "react-router-dom";
 export default function EventCard(props) {
   const [event, setEvent] = useState({ time: "", date: "" });
   const { user } = useContext(UserContext);
@@ -16,8 +17,8 @@ export default function EventCard(props) {
         attending: true
       })
       .then(res => {
-        console.log(res.data);
-        setEvent({ guests: res.data });
+        // console.log(res.data);
+        setEvent({ ...event, guests: res.data });
         setGuests(!guests);
       })
       .catch(err => console.error(err));
@@ -31,8 +32,8 @@ export default function EventCard(props) {
         attending: false
       })
       .then(res => {
-        console.log(res.data);
-        setEvent({ guests: res.data });
+        // console.log(res.data);
+        setEvent({ ...event, guests: res.data });
         setGuests(!guests);
       })
       .catch(err => console.error(err));
@@ -42,7 +43,7 @@ export default function EventCard(props) {
       .get(`events/${props.id}`)
       // .get(`events/${props.event.event_id}`)
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         setEvent(res.data);
         setGuests(
           res.data.guests.filter(
@@ -52,7 +53,7 @@ export default function EventCard(props) {
         axiosWithAuth()
           .get(`users/${res.data.organizer_id}`)
           .then(response => {
-            console.log(response.data);
+            // console.log(response.data);
             setOrganizer(response.data.full_name);
           })
           .catch(errR => console.error(errR));
@@ -99,6 +100,13 @@ export default function EventCard(props) {
       <h4>Guests:</h4>
       <EventGuests guests={event.guests} />
       {guests ? unAttendBtn : attendBtn}
+      {user.user_id == event.organizer_id ? (
+        <Link to={`/EditEvent/${event.event_id}`}>
+          <button>Edit Event</button>
+        </Link>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

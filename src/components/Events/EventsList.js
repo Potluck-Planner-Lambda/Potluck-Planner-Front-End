@@ -31,9 +31,12 @@ export default function EventsList() {
     <div className="mainEventsList">
       <Sidebar />
       {[...events].reverse().map(event => (
-        <Link to={`/Events/${event.event_id}`}>
+        <div className="EventCardDiv">
           <EventCard event={event} id={event.event_id} />
-        </Link>
+          <Link to={`/Events/${event.event_id}`}>
+            <p className="eventDetailsLink">View Event Details</p>
+          </Link>
+        </div>
       ))}
     </div>
   );

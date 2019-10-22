@@ -8,12 +8,13 @@
   a {
     text-decoration: none;
     color: black;
+    width: 48%;
+    padding: 10px;
   }
 
-  .EventCard {
-    width: 60%;
+  .EventCardDiv {
+    // width: 60%;
     border: 2px solid black;
-    padding: 30px;
     margin-bottom: 20px;
     border-radius: 3px;
     display: flex;
@@ -21,6 +22,15 @@
     justify-content: center;
     align-items: center;
     background: #EBEDF1;
+    padding: 30px;
+
+    .EventCard {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
     .title {
       font-size: 2rem;
@@ -64,13 +74,27 @@
     a {
       text-decoration: none;
       color: black;
+      width: 80%;
+      margin: 0 auto;
 
       &:hover {
         color: gray;
       }
+
+      button {
+        margin: 0 auto;
+      }
+
+      p {
+        width: 100%;
+        text-align: center;
+      }
     }
 
-    button {
+
+
+    button,
+    .eventDetailsLink {
       font-family: 'Roboto';
       font-size: 1.4rem;
       margin: .5em 0 0 .5em;
