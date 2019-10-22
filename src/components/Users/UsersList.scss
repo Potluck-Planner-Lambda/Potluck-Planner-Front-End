@@ -19,21 +19,39 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: #EBEDF1;
 
     .title {
       font-size: 2rem;
-    }
-
-    .email {
-      font-style: italic;
-    }
-
-    .username {
-      font-size: 1.5rem;
-    }
-
-    .user_id {
+      font-family: 'Roboto';
       font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    h4 {
+      color: black;
+      font-family: 'Roboto';
+      font-size: 1.4em;
+      font-weight: bold;
+      margin: 1em 1em 0 1em;
+    }
+
+    .email,
+    .username,
+    .user_id {
+      font-family: 'Roboto';
+      font-size: 1.4em;
+      font-weight: bold;
+      margin: 1em 1em 0 1em;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        color: gray;
+      }
     }
   }
 }

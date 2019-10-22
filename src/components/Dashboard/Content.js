@@ -22,7 +22,7 @@ const Content = () => {
                 
                 <CardTitle className="eventAddress">{event.address + " " + event.city + ", " + event.state}</CardTitle>
 
-                <CardSubtitle className="eventTime">{event.date.slice(5, 10)} @{" "}
+                <CardSubtitle className="eventTime">{event.date.slice(5, 10) + "-" + event.date.slice(0, 4)} @{" "}
                   {event.time.slice(0, 2) > 12
                     ? event.time.slice(0, 2) -
                       12 +
